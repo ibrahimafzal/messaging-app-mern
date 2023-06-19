@@ -15,7 +15,13 @@ const authToken = process.env.TWILIO_AUTH_TOKEN
 const twilioClient = require("twilio")(accoundSid, authToken)
 const messagingServiceSid = process.env.TWILIO_MESSAGING_SERVICE_SID
 
-app.use(cors())
+app.use(cors(
+    {
+        origin: ["https://messaging-app-mern.vercel.app"],
+        methods: ["POST", "GET"],
+        credentials: true
+    }
+))
 
 app.use(express.json())
 app.use(express.urlencoded())
