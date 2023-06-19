@@ -20,6 +20,8 @@ const Auth = () => {
     const [form, setForm] = useState(initialState)
     const [isSignup, setIsSignup] = useState(true)
 
+    axios.defaults.withCredentials = true 
+
     const handleChange = (e) => {
         setForm({ ...form, [e.target.name]: e.target.value })
     }
@@ -34,7 +36,8 @@ const Auth = () => {
         e.preventDefault()
         const { username, password, phoneNumber, avatarURL } = form
 
-        const URL = "http://localhost:5000/auth"
+        // const URL = "http://localhost:5000/auth"
+        const URL = "https://messaging-app-mern.vercel.app/"
 
         const { data: { token, userId, hashedPassword, fullName } } = await axios.post(`${URL}/${isSignup ? "signup" : "login"}`, {
             username, password, fullName: form.fullName, phoneNumber, avatarURL

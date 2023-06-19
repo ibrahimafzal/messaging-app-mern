@@ -6,7 +6,6 @@ import { Chat } from "stream-chat-react"
 import Cookies from "universal-cookie"
 import { ChannelContainer, ChannelListContainer, Auth } from "./components"
 
-
 const cookies = new Cookies()
 
 const apiKey = "cmtcdu5jzazu"
@@ -33,7 +32,7 @@ const App = () => {
     const [isCreating, setIsCreating] = useState(false)
     const [isEditing, setIsEditing] = useState(false)
 
-    if (!authToken) return <Auth />
+    if (!authToken) return <Auth /> 
 
     return (
         <div className='app__wrapper'>
