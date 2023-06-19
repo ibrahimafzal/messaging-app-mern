@@ -32,7 +32,9 @@ const App = () => {
     const [isCreating, setIsCreating] = useState(false)
     const [isEditing, setIsEditing] = useState(false)
 
-    if (!authToken) return <Auth /> 
+    if (!authToken) return <Auth />
+
+    axios.defaults.withCredentials = true 
 
     return (
         <div className='app__wrapper'>
