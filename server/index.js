@@ -17,7 +17,7 @@ const messagingServiceSid = process.env.TWILIO_MESSAGING_SERVICE_SID
 
 app.use(cors(
     {
-        origin: ["https://messaging-app-mern.vercel.app"],
+        origin: [""],
         methods: ["POST", "GET"],
         credentials: true
     }
